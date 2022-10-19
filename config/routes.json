@@ -1,0 +1,47 @@
+{
+  "routes": [
+    {
+      "methods": [
+        "GET"
+      ],
+      "path": "/todos",
+      "summary": "todos",
+      "description": "Lorem ipsum dolor sit amet, **consectetur adipiscing** elit, sed do `eiusmod tempor` incididunt ut labore et dolore magna aliqua.",
+      "version": "none",
+      "corsPolicy": "none",
+      "handler": {
+        "export": "urlRewriteHandler",
+        "module": "$import(@zuplo/runtime)",
+        "options": {
+          "rewritePattern": "https://jsonplaceholder.typicode.com/todos",
+          "forwardSearch": true
+        }
+      },
+      "policies": {
+        "inbound": []
+      },
+      "operationId": "865e492b-9756-4305-9e4a-011cfea49aa5"
+    }
+  ],
+  "versions": [
+    {
+      "name": "none",
+      "pathPrefix": "",
+      "info": {
+        "title": "My API, powered by Zuplo",
+        "description": "You can document your API directly in this file. Save your changes and open your developer portal to see it in action.",
+        "version": "0.0.0"
+      }
+    },
+    {
+      "name": "v1",
+      "pathPrefix": "/v1",
+      "info": {
+        "title": "My API V1, powered by Zuplo",
+        "description": "<insert description for v1>",
+        "version": "1.0.0"
+      }
+    }
+  ],
+  "policies": []
+}
